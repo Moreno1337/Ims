@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "cmuK85Hwk0UcJqKiDJCa6nmOWwOcORJLQq+0+FM8F5tYZoyyYsxyDJoMacvCH+6wEmbgUQEwZlmbgD17qilvdw==",
+  "dgSpecHash": "PZmEfF47rKaoCn8uyJFyKDiiZhFapVmarovplFnrJxf7++gltM84giBh3OvIq7m9gi5+Tgsha2hXNQiChdbssA==",
   "success": true,
   "projectFilePath": "/home/moreno/Documents/repos/Ims/src/Ims.API/Ims.API.csproj",
   "expectedPackageFiles": [
+    "/home/moreno/.nuget/packages/automapper/14.0.0/automapper.14.0.0.nupkg.sha512",
+    "/home/moreno/.nuget/packages/mediatr/12.5.0/mediatr.12.5.0.nupkg.sha512",
+    "/home/moreno/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/moreno/.nuget/packages/microsoft.aspnetcore.openapi/8.0.15/microsoft.aspnetcore.openapi.8.0.15.nupkg.sha512",
     "/home/moreno/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/moreno/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/home/moreno/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "/home/moreno/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/home/moreno/.nuget/packages/microsoft.openapi/1.6.14/microsoft.openapi.1.6.14.nupkg.sha512",
     "/home/moreno/.nuget/packages/swashbuckle.aspnetcore/6.6.2/swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
     "/home/moreno/.nuget/packages/swashbuckle.aspnetcore.swagger/6.6.2/swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",

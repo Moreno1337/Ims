@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+gJhBuyquKFHaSZS7SwNsaatDQagX5TgKcAq2mDeQuRLRz3ECY4Sj6ORLuc6kOlo/Q9uZijK06J+BYgU/qKK1w==",
+  "dgSpecHash": "X+REgu3Iyo8dLlAFf0tEa3n6KJoGL/W/rumWjNqbqQE5CNwBaE3SeSvsxC1NEBz20LBEKx+AnCmVIXb+bZ7Uqw==",
   "success": true,
   "projectFilePath": "/home/moreno/Documents/repos/Ims/src/Ims.Infra/Ims.Infra.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/moreno/.nuget/packages/mediatr/12.5.0/mediatr.12.5.0.nupkg.sha512",
+    "/home/moreno/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/moreno/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

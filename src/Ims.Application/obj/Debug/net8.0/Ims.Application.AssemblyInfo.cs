@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ims.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+625384dfa9fc789522313693ebebe1a15ae40229")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65c5a662c86c317a409345264e6db8c235ec5150")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ims.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ims.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
