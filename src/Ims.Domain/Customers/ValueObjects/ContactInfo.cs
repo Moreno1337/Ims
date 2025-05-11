@@ -4,7 +4,7 @@ public class ContactInfo
 {
     public string? Phone { get; private set; }
     public string? Mobile { get; private set; }
-    public List<string>? Emails { get; private set; }
+    public IReadOnlyList<Email> Emails { get; private set; } = new List<Email>();
 
     private ContactInfo() { }
 
@@ -14,9 +14,11 @@ public class ContactInfo
         List<string>? emails
     )
     {
+        List<Email> parsedEmails = ParseEmails(emails);
+
         Phone = phone;
         Mobile = mobile;
-        Emails = emails;
+        Emails = parsedEmails;
     }
 
     public static ContactInfo Create(
@@ -30,5 +32,20 @@ public class ContactInfo
             mobile,
             emails
         );
+    }
+
+    private List<Email> ParseEmails(List<string>? emails)
+    {
+        if (emails is null || emails.Count == 0) return new List<Email>();
+
+        List<Email> parsedEmails = new List<Email>();
+
+        foreach (var email in emails)
+        {
+            var parsedEmail = Email.Create(email);
+            parsedEmails.Add(parsedEmail);
+        }
+
+        return parsedEmails;
     }
 }
