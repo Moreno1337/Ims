@@ -15,3 +15,4 @@
 /home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/refint/Ims.Infra.dll
 /home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.pdb
 /home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/ref/Ims.Infra.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.sourcelink.json

@@ -37,3 +37,7 @@
 /home/moreno/Documents/repos/Ims/src/Ims.API/obj/Debug/net8.0/Ims.API.pdb
 /home/moreno/Documents/repos/Ims/src/Ims.API/obj/Debug/net8.0/Ims.API.genruntimeconfig.cache
 /home/moreno/Documents/repos/Ims/src/Ims.API/obj/Debug/net8.0/ref/Ims.API.dll
+/home/moreno/Documents/repos/Ims/src/Ims.API/bin/Debug/net8.0/AutoMapper.dll
+/home/moreno/Documents/repos/Ims/src/Ims.API/bin/Debug/net8.0/MediatR.dll
+/home/moreno/Documents/repos/Ims/src/Ims.API/bin/Debug/net8.0/MediatR.Contracts.dll
+/home/moreno/Documents/repos/Ims/src/Ims.API/obj/Debug/net8.0/Ims.API.sourcelink.json

@@ -13,3 +13,4 @@
 /home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/refint/Ims.Application.dll
 /home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.pdb
 /home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/ref/Ims.Application.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.sourcelink.json

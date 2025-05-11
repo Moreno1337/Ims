@@ -9,3 +9,4 @@
 /home/moreno/Documents/repos/Ims/src/Ims.Domain/obj/Debug/net8.0/refint/Ims.Domain.dll
 /home/moreno/Documents/repos/Ims/src/Ims.Domain/obj/Debug/net8.0/Ims.Domain.pdb
 /home/moreno/Documents/repos/Ims/src/Ims.Domain/obj/Debug/net8.0/ref/Ims.Domain.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Domain/obj/Debug/net8.0/Ims.Domain.sourcelink.json

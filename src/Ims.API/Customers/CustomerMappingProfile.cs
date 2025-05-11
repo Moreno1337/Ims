@@ -4,9 +4,9 @@ using Ims.Application.Customers.Commands;
 
 namespace Ims.API.Customers;
 
-public class MappingProfile : Profile
+public class CustomerMappingProfile : Profile
 {
-    public MappingProfile()
+    public CustomerMappingProfile()
     {
         CreateMap<CreateCustomerRequest, CreateCustomerCommand>();
     }
