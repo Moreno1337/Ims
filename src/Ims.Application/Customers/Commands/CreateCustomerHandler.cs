@@ -16,8 +16,14 @@ public class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, int>
 
     public async Task<int> Handle(CreateCustomerCommand request, CancellationToken ct)
     {
+        CustomerType type;
+        bool typeIsOk = Enum.TryParse<CustomerType>(request.Type, ignoreCase: true, out type);
+        
+        if (!typeIsOk)
+            throw new ArgumentException("Invalid customer type (Should be NaturalPerson or LegalEntity)");
+
         var customer = Customer.Create(
-            request.Type,
+            type,
             request.CPF,
             request.Name,
             request.BirthDate,

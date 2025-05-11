@@ -1,34 +1,21 @@
+using Ims.Domain.Customers.ValueObjects;
+
 namespace Ims.Domain.Customers;
+
+public enum CustomerType { NaturalPerson, LegalEntity }
 
 public class Customer
 {
     public int Id { get; private set; }
-    public string? Type { get; private set; }
-    public string? CPF { get; private set; }
-    public string? Name { get; private set; }
-    public DateTime? BirthDate { get; private set; }
-    public string? CNPJ { get; private set; }
-    public string? CorporateName { get; private set; }
-    public string? TradeName { get; private set; }
-    public string? StateRegistration { get; private set; }
-    public int BillingTerm { get; private set; }
-    public decimal Interest { get; private set; }
-    public decimal Fine { get; private set; }
-    public string? Phone { get; private set; }
-    public string? Mobile { get; private set; }
-    public string? Country { get; private set; }
-    public string? PostalCode { get; private set; }
-    public string? State { get; private set; }
-    public string? City { get; private set; }
-    public string? Street { get; private set; }
-    public string? Number { get; private set; }
-    public string? Neighborhood { get; private set; }
-    public string? AdditionalInfo { get; private set; }
+    public CustomerType Type { get; set; }
+    public PersonInfo? PersonInfo { get; private set; }
+    public CompanyInfo? CompanyInfo { get; private set; }
+    public Address Address { get; private set; }
+    public ContactInfo ContactInfo { get; private set; }
     public string? Notes { get; private set; }
-    public List<string> Emails { get; private set; } = new List<string>();
 
     private Customer(
-        string? type,
+        CustomerType? type,
         string? cpf,
         string? name,
         DateTime? birthDate,
@@ -53,33 +40,60 @@ public class Customer
         List<string> emails
     )
     {
-        Type = type;
-        CPF = cpf;
-        Name = name;
-        BirthDate = birthDate;
-        CNPJ = cnpj;
-        CorporateName = corporateName;
-        TradeName = tradeName;
-        StateRegistration = stateRegistration;
-        BillingTerm = billingTerm;
-        Interest = interest;
-        Fine = fine;
-        Phone = phone;
-        Mobile = mobile;
-        Country = country;
-        PostalCode = postalCode;
-        State = state;
-        City = city;
-        Street = street;
-        Number = number;
-        Neighborhood = neighborhood;
-        AdditionalInfo = additionalInfo;
+        if (type is null)
+            throw new ArgumentNullException(nameof(Type));
+
+        PersonInfo? personInfo = null;
+        CompanyInfo? companyInfo = null;
+
+        if (type == CustomerType.NaturalPerson)
+        {
+            personInfo = PersonInfo.Create(
+                cpf,
+                name,
+                birthDate
+            );
+        }
+
+        if (type == CustomerType.LegalEntity)
+        {
+            companyInfo = CompanyInfo.Create(
+                cnpj,
+                corporateName,
+                tradeName,
+                stateRegistration,
+                billingTerm,
+                interest,
+                fine
+            );
+        }
+
+        var address = Address.Create(
+            country,
+            postalCode,
+            state,
+            city,
+            street,
+            number,
+            neighborhood,
+            additionalInfo
+        );
+
+        var contactInfo = ContactInfo.Create(
+            phone,
+            mobile,
+            emails
+        );
+
+        PersonInfo = personInfo;
+        CompanyInfo = companyInfo;
+        Address = address;
+        ContactInfo = contactInfo;
         Notes = notes;
-        Emails = emails;
     }
 
     public static Customer Create(
-        string? type,
+        CustomerType? type,
         string? cpf,
         string? name,
         DateTime? birthDate,
@@ -132,7 +146,7 @@ public class Customer
     }
 
     public void Update(
-        string? type,
+        CustomerType? type,
         string? cpf,
         string? name,
         DateTime? birthDate,
@@ -157,28 +171,55 @@ public class Customer
         List<string> emails
     )
     {
-        Type = type;
-        CPF = cpf;
-        Name = name;
-        BirthDate = birthDate;
-        CNPJ = cnpj;
-        CorporateName = corporateName;
-        TradeName = tradeName;
-        StateRegistration = stateRegistration;
-        BillingTerm = billingTerm;
-        Interest = interest;
-        Fine = fine;
-        Phone = phone;
-        Mobile = mobile;
-        Country = country;
-        PostalCode = postalCode;
-        State = state;
-        City = city;
-        Street = street;
-        Number = number;
-        Neighborhood = neighborhood;
-        AdditionalInfo = additionalInfo;
+        if (type is null)
+            throw new ArgumentNullException(nameof(Type));
+
+        PersonInfo? personInfo = null;
+        CompanyInfo? companyInfo = null;
+
+        if (type == CustomerType.NaturalPerson)
+        {
+            personInfo = PersonInfo.Create(
+                cpf,
+                name,
+                birthDate
+            );
+        }
+
+        if (type == CustomerType.LegalEntity)
+        {
+            companyInfo = CompanyInfo.Create(
+                cnpj,
+                corporateName,
+                tradeName,
+                stateRegistration,
+                billingTerm,
+                interest,
+                fine
+            );
+        }
+
+        var address = Address.Create(
+            country,
+            postalCode,
+            state,
+            city,
+            street,
+            number,
+            neighborhood,
+            additionalInfo
+        );
+
+        var contactInfo = ContactInfo.Create(
+            phone,
+            mobile,
+            emails
+        );
+
+        PersonInfo = personInfo;
+        CompanyInfo = companyInfo;
+        Address = address;
+        ContactInfo = contactInfo;
         Notes = notes;
-        Emails = emails;
     }
 }
