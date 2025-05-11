@@ -1,0 +1,15 @@
+/home/moreno/Documents/repos/Ims/src/Ims.Application/bin/Debug/net8.0/Ims.Application.deps.json
+/home/moreno/Documents/repos/Ims/src/Ims.Application/bin/Debug/net8.0/Ims.Application.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Application/bin/Debug/net8.0/Ims.Application.pdb
+/home/moreno/Documents/repos/Ims/src/Ims.Application/bin/Debug/net8.0/Ims.Domain.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Application/bin/Debug/net8.0/Ims.Domain.pdb
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.csproj.AssemblyReference.cache
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.AssemblyInfoInputs.cache
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.AssemblyInfo.cs
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.csproj.CoreCompileInputs.cache
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.csproj.CopyComplete
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/refint/Ims.Application.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.pdb
+/home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/ref/Ims.Application.dll

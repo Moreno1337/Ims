@@ -1,0 +1,17 @@
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/bin/Debug/net8.0/Ims.Infra.deps.json
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/bin/Debug/net8.0/Ims.Infra.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/bin/Debug/net8.0/Ims.Infra.pdb
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/bin/Debug/net8.0/Ims.Application.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/bin/Debug/net8.0/Ims.Domain.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/bin/Debug/net8.0/Ims.Application.pdb
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/bin/Debug/net8.0/Ims.Domain.pdb
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.csproj.AssemblyReference.cache
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.GeneratedMSBuildEditorConfig.editorconfig
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.AssemblyInfoInputs.cache
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.AssemblyInfo.cs
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.csproj.CoreCompileInputs.cache
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.csproj.CopyComplete
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/refint/Ims.Infra.dll
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.pdb
+/home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/ref/Ims.Infra.dll
