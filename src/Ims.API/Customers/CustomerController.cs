@@ -29,18 +29,18 @@ public class CustomerController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateCustomer(int id, [FromBody] UpdateCustomerRequest request)
     {
-        return null!;
+        throw new NotImplementedException();
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCustomer(int id)
     {
-        return null!;
+        throw new NotImplementedException();
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAllCustomers(int id)
     {
-        return null!;
+        throw new NotImplementedException();
     }
 }
