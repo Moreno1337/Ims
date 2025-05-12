@@ -11,7 +11,7 @@ public class Email
     private Email(string? email)
     {
         if (string.IsNullOrEmpty(email))
-            throw new ArgumentException("Invalid e-mail address (was empty)");
+            throw new ArgumentException("Email cannot be null or empty.", nameof(email));
 
         if (!IsValidEmail(email))
             throw new ArgumentException($"Invalid email address: {email}");

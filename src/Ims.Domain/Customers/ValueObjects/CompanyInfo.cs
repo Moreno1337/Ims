@@ -2,7 +2,7 @@ namespace Ims.Domain.Customers.ValueObjects;
 
 public class CompanyInfo
 {
-    public string CNPJ { get; private set; } = null!;
+    public CNPJ CNPJ { get; private set; } = null!;
     public string CorporateName { get; private set; } = null!;
     public string? TradeName { get; private set; }
     public string? StateRegistration { get; private set; }
@@ -13,7 +13,7 @@ public class CompanyInfo
     private CompanyInfo() { }
 
     private CompanyInfo(
-        string? cnpj,
+        string? cnpjValue,
         string? corporateName,
         string? tradeName,
         string? stateRegistration,
@@ -22,10 +22,13 @@ public class CompanyInfo
         decimal fine
     )
     {
-        ValidateFields(cnpj, corporateName);
+        CNPJ cnpj = CNPJ.Create(cnpjValue);
 
-        CNPJ = cnpj!;
-        CorporateName = corporateName!;
+        if (string.IsNullOrEmpty(corporateName))
+            throw new ArgumentException("Corporate name is required", nameof(corporateName));
+
+        CNPJ = cnpj;
+        CorporateName = corporateName;
         TradeName = tradeName;
         StateRegistration = stateRegistration;
         BillingTerm = billingTerm;
@@ -52,14 +55,5 @@ public class CompanyInfo
             interest,
             fine
         );
-    }
-
-    private void ValidateFields(string? cnpj, string? corporateName)
-    {
-        if (string.IsNullOrEmpty(cnpj))
-            throw new ArgumentException("CNPJ is required");
-
-        if (string.IsNullOrEmpty(corporateName))
-            throw new ArgumentException("Corporate Name is required");
     }
 }

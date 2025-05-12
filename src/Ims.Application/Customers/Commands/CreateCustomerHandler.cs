@@ -1,6 +1,7 @@
 using Ims.Application.Customers;
 using Ims.Application.Customers.Commands;
 using Ims.Domain.Customers;
+using Ims.Domain.Customers.ValueObjects;
 using MediatR;
 
 namespace IMS.Application.Customers.Commands;
@@ -20,22 +21,34 @@ public class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, int>
         bool typeIsOk = Enum.TryParse<CustomerType>(request.Type, ignoreCase: true, out type);
         
         if (!typeIsOk)
-            throw new ArgumentException("Invalid customer type (Should be NaturalPerson or LegalEntity)");
+            throw new ArgumentException("Invalid customer type", nameof(request.Type));
 
-        var customer = Customer.Create(
-            type,
-            request.CPF,
-            request.Name,
-            request.BirthDate,
-            request.CNPJ,
-            request.CorporateName,
-            request.TradeName,
-            request.StateRegistration,
-            request.BillingTerm,
-            request.Interest,
-            request.Fine,
-            request.Phone,
-            request.Mobile,
+        PersonInfo? personInfo = null;
+        CompanyInfo? companyInfo = null;
+
+        if (type == CustomerType.NaturalPerson)
+        {
+            personInfo = PersonInfo.Create(
+                request.CPF,
+                request.Name,
+                request.BirthDate
+            );
+        }
+
+        if (type == CustomerType.LegalEntity)
+        {
+            companyInfo = CompanyInfo.Create(
+                request.CNPJ,
+                request.CorporateName,
+                request.TradeName,
+                request.StateRegistration,
+                request.BillingTerm,
+                request.Interest,
+                request.Fine
+            );
+        }
+
+        var address = Address.Create(
             request.Country,
             request.PostalCode,
             request.State,
@@ -43,9 +56,31 @@ public class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, int>
             request.Street,
             request.Number,
             request.Neighborhood,
-            request.AdditionalInfo,
-            request.Notes,
+            request.AdditionalInfo
+        );
+
+        Mobile? mobile = null;
+        Phone? phone = null;
+
+        if (!string.IsNullOrEmpty(request.Mobile))
+            mobile = Mobile.Create(request.Mobile);
+
+        if (!string.IsNullOrEmpty(request.Phone))
+            phone = Phone.Create(request.Phone);
+
+        var contactInfo = ContactInfo.Create(
+            phone,
+            mobile,
             request.Emails
+        );
+
+        var customer = Customer.Create(
+            type,
+            personInfo,
+            companyInfo,
+            address,
+            contactInfo,
+            request.Notes
         );
 
         await _repository.AddAsync(customer);

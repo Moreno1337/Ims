@@ -7,7 +7,7 @@ public enum CustomerType { NaturalPerson, LegalEntity }
 public class Customer
 {
     public int Id { get; private set; }
-    public CustomerType Type { get; set; }
+    public CustomerType Type { get; private set; }
     public PersonInfo? PersonInfo { get; private set; }
     public CompanyInfo? CompanyInfo { get; private set; }
     public Address Address { get; private set; }
@@ -15,211 +15,78 @@ public class Customer
     public string? Notes { get; private set; }
 
     private Customer(
-        CustomerType? type,
-        string? cpf,
-        string? name,
-        DateTime? birthDate,
-        string? cnpj,
-        string? corporateName,
-        string? tradeName,
-        string? stateRegistration,
-        int billingTerm,
-        decimal interest,
-        decimal fine,
-        string? phone,
-        string? mobile,
-        string? country,
-        string? postalCode,
-        string? state,
-        string? city,
-        string? street,
-        string? number,
-        string? neighborhood,
-        string? additionalInfo,
-        string? notes,
-        List<string> emails
+        CustomerType type,
+        PersonInfo? personInfo,
+        CompanyInfo? companyInfo,
+        Address? address,
+        ContactInfo? contactInfo,
+        string? notes
     )
     {
-        if (type is null)
-            throw new ArgumentNullException(nameof(Type));
-
-        PersonInfo? personInfo = null;
-        CompanyInfo? companyInfo = null;
-
-        if (type == CustomerType.NaturalPerson)
-        {
-            personInfo = PersonInfo.Create(
-                cpf,
-                name,
-                birthDate
-            );
-        }
-
-        if (type == CustomerType.LegalEntity)
-        {
-            companyInfo = CompanyInfo.Create(
-                cnpj,
-                corporateName,
-                tradeName,
-                stateRegistration,
-                billingTerm,
-                interest,
-                fine
-            );
-        }
-
-        var address = Address.Create(
-            country,
-            postalCode,
-            state,
-            city,
-            street,
-            number,
-            neighborhood,
-            additionalInfo
-        );
-
-        var contactInfo = ContactInfo.Create(
-            phone,
-            mobile,
-            emails
-        );
+        ValidateFields(type, personInfo, companyInfo, address, contactInfo);
 
         PersonInfo = personInfo;
         CompanyInfo = companyInfo;
-        Address = address;
-        ContactInfo = contactInfo;
+        Address = address!;
+        ContactInfo = contactInfo!;
         Notes = notes;
     }
 
     public static Customer Create(
-        CustomerType? type,
-        string? cpf,
-        string? name,
-        DateTime? birthDate,
-        string? cnpj,
-        string? corporateName,
-        string? tradeName,
-        string? stateRegistration,
-        int billingTerm,
-        decimal interest,
-        decimal fine,
-        string? phone,
-        string? mobile,
-        string? country,
-        string? postalCode,
-        string? state,
-        string? city,
-        string? street,
-        string? number,
-        string? neighborhood,
-        string? additionalInfo,
-        string? notes,
-        List<string> emails
+        CustomerType type,
+        PersonInfo? personInfo,
+        CompanyInfo? companyInfo,
+        Address? address,
+        ContactInfo? contactInfo,
+        string? notes
     )
     {
         return new Customer(
             type,
-            cpf,
-            name,
-            birthDate,
-            cnpj,
-            corporateName,
-            tradeName,
-            stateRegistration,
-            billingTerm,
-            interest,
-            fine,
-            phone,
-            mobile,
-            country,
-            postalCode,
-            state,
-            city,
-            street,
-            number,
-            neighborhood,
-            additionalInfo,
-            notes,
-            emails
+            personInfo,
+            companyInfo,
+            address,
+            contactInfo,
+            notes
         );
     }
 
     public void Update(
-        CustomerType? type,
-        string? cpf,
-        string? name,
-        DateTime? birthDate,
-        string? cnpj,
-        string? corporateName,
-        string? tradeName,
-        string? stateRegistration,
-        int billingTerm,
-        decimal interest,
-        decimal fine,
-        string? phone,
-        string? mobile,
-        string? country,
-        string? postalCode,
-        string? state,
-        string? city,
-        string? street,
-        string? number,
-        string? neighborhood,
-        string? additionalInfo,
-        string? notes,
-        List<string> emails
+        CustomerType type,
+        PersonInfo? personInfo,
+        CompanyInfo? companyInfo,
+        Address? address,
+        ContactInfo? contactInfo,
+        string? notes
     )
     {
-        if (type is null)
-            throw new ArgumentNullException(nameof(Type));
-
-        PersonInfo? personInfo = null;
-        CompanyInfo? companyInfo = null;
-
-        if (type == CustomerType.NaturalPerson)
-        {
-            personInfo = PersonInfo.Create(
-                cpf,
-                name,
-                birthDate
-            );
-        }
-
-        if (type == CustomerType.LegalEntity)
-        {
-            companyInfo = CompanyInfo.Create(
-                cnpj,
-                corporateName,
-                tradeName,
-                stateRegistration,
-                billingTerm,
-                interest,
-                fine
-            );
-        }
-
-        var address = Address.Create(
-            country,
-            postalCode,
-            state,
-            city,
-            street,
-            number,
-            neighborhood,
-            additionalInfo
-        );
-
-        var contactInfo = ContactInfo.Create(
-            phone,
-            mobile,
-            emails
-        );
+        ValidateFields(type, personInfo, companyInfo, address, contactInfo);
 
         PersonInfo = personInfo;
         CompanyInfo = companyInfo;
-        Address = address;
-        ContactInfo = contactInfo;
+        Address = address!;
+        ContactInfo = contactInfo!;
         Notes = notes;
+    }
+
+    private void ValidateFields(
+        CustomerType type,
+        PersonInfo? personInfo,
+        CompanyInfo? companyInfo,
+        Address? address,
+        ContactInfo? contactInfo
+    )
+    {
+        if (type == CustomerType.NaturalPerson && personInfo == null)
+            throw new ArgumentException("PersonInfo is required for NaturalPerson");
+
+        if (type == CustomerType.LegalEntity && companyInfo == null)
+            throw new ArgumentException("CompanyInfo is required for LegalEntity");
+
+        if (address is null)
+            throw new ArgumentException("Address info is required");
+
+        if (contactInfo is null)
+            throw new ArgumentException("Contact info is required");
     }
 }

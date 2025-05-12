@@ -2,15 +2,15 @@ namespace Ims.Domain.Customers.ValueObjects;
 
 public class ContactInfo
 {
-    public string? Phone { get; private set; }
-    public string? Mobile { get; private set; }
+    public Phone? Phone { get; private set; }
+    public Mobile? Mobile { get; private set; }
     public IReadOnlyList<Email> Emails { get; private set; } = new List<Email>();
 
     private ContactInfo() { }
 
     private ContactInfo(
-        string? phone,
-        string? mobile,
+        Phone? phone,
+        Mobile? mobile,
         List<string>? emails
     )
     {
@@ -22,8 +22,8 @@ public class ContactInfo
     }
 
     public static ContactInfo Create(
-        string? phone,
-        string? mobile,
+        Phone? phone,
+        Mobile? mobile,
         List<string>? emails
     )
     {

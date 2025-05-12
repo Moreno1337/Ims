@@ -3,7 +3,7 @@ namespace Ims.Domain.Customers.ValueObjects;
 public class Address
 {
     public string Country { get; private set; } = null!;
-    public string PostalCode { get; private set; } = null!;
+    public PostalCode PostalCode { get; private set; } = null!;
     public string State { get; private set; } = null!;
     public string City { get; private set; } = null!;
     public string Street { get; private set; } = null!;
@@ -15,7 +15,7 @@ public class Address
 
     private Address(
         string? country,
-        string? postalCode,
+        string? postalCodeValue,
         string? state,
         string? city,
         string? street,
@@ -24,7 +24,17 @@ public class Address
         string? additionalInfo
     )
     {
-        ValidateFields(country, postalCode, state, city, street, number, neighborhood);
+        PostalCode postalCode = PostalCode.Create(postalCodeValue);
+
+        ValidateFields(
+            country,
+            postalCodeValue,
+            state,
+            city,
+            street,
+            number,
+            neighborhood
+        );
 
         Country = country!;
         PostalCode = postalCode!;
@@ -61,7 +71,7 @@ public class Address
 
     private void ValidateFields(
         string? country,
-        string? postalCode,
+        string? postalCodeValue,
         string? state,
         string? city,
         string? street,
@@ -70,24 +80,24 @@ public class Address
     )
     {
         if (string.IsNullOrEmpty(country))
-            throw new ArgumentException("Country is required");
+            throw new ArgumentException("Country is required", nameof(country));
 
-        if (string.IsNullOrEmpty(postalCode))
-            throw new ArgumentException("Postal Code is required");
+        if (string.IsNullOrEmpty(postalCodeValue))
+            throw new ArgumentException("PostalCode is required", nameof(postalCodeValue));
 
         if (string.IsNullOrEmpty(state))
-            throw new ArgumentException("State is required");
+            throw new ArgumentException("State is required", nameof(state));
 
         if (string.IsNullOrEmpty(city))
-            throw new ArgumentException("City is required");
+            throw new ArgumentException("City is required", nameof(city));
 
         if (string.IsNullOrEmpty(street))
-            throw new ArgumentException("Street is required");
+            throw new ArgumentException("Street is required", nameof(street));
 
         if (string.IsNullOrEmpty(number))
-            throw new ArgumentException("Number is required");
+            throw new ArgumentException("Number is required", nameof(number));
 
         if (string.IsNullOrEmpty(neighborhood))
-            throw new ArgumentException("Neighborhood is required");
+            throw new ArgumentException("Neighborhood is required", nameof(neighborhood));
     }
 }
