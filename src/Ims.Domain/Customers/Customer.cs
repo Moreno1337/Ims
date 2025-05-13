@@ -11,9 +11,11 @@ public class Customer : IAuditable
     public CustomerType Type { get; private set; }
     public PersonInfo? PersonInfo { get; private set; }
     public CompanyInfo? CompanyInfo { get; private set; }
-    public Address Address { get; private set; }
-    public ContactInfo ContactInfo { get; private set; }
+    public Address Address { get; private set; } = null!;
+    public ContactInfo ContactInfo { get; private set; } = null!;
     public string? Notes { get; private set; }
+
+    private Customer() { }
 
     private Customer(
         CustomerType type,

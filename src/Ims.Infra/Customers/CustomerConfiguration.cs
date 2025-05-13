@@ -21,14 +21,22 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 
         builder.OwnsOne(c => c.PersonInfo, person =>
         {
-            person.Property(p => p.CPF).HasColumnName("CPF").HasColumnType("char(14)");
+            person.OwnsOne(c => c.CPF, cpf =>
+            {
+                cpf.Property(p => p.Value).HasColumnName("CPF").HasColumnType("char(14)");
+            });
+
             person.Property(p => p.Name).HasColumnName("Name").HasColumnType("nvarchar(200)");
             person.Property(p => p.BirthDate).HasColumnName("BirthDate").HasColumnType("datetime");
         });
 
         builder.OwnsOne(c => c.CompanyInfo, company =>
         {
-            company.Property(p => p.CNPJ).HasColumnName("CNPJ").HasColumnType("char(18)");
+            company.OwnsOne(c => c.CNPJ, cnpj =>
+            {
+                cnpj.Property(p => p.Value).HasColumnName("CNPJ").HasColumnType("char(18)");
+            });
+
             company.Property(p => p.CorporateName).HasColumnName("CorporateName").HasColumnType("nvarchar(200)");
             company.Property(p => p.TradeName).HasColumnName("TradeName").HasColumnType("nvarchar(200)");
             company.Property(p => p.StateRegistration).HasColumnName("StateRegistration").HasColumnType("nvarchar(50)");
@@ -39,8 +47,12 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 
         builder.OwnsOne(c => c.Address, address =>
         {
+            address.OwnsOne(p => p.PostalCode, postalCode =>
+            {
+                postalCode.Property(p => p.Value).HasColumnName("PostalCode").HasColumnType("char(9)").IsRequired();
+            });
+
             address.Property(a => a.Country).HasColumnName("Country").HasColumnType("nvarchar(60)").IsRequired();
-            address.Property(a => a.PostalCode).HasColumnName("PostalCode").HasColumnType("char(9)").IsRequired();
             address.Property(a => a.State).HasColumnName("State").HasColumnType("char(2)").IsRequired();
             address.Property(a => a.City).HasColumnName("City").HasColumnType("nvarchar(50)").IsRequired();
             address.Property(a => a.Street).HasColumnName("Street").HasColumnType("nvarchar(100)").IsRequired();
@@ -61,7 +73,14 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
                 mobile.Property(p => p.Number).HasColumnName("Mobile").HasColumnType("char(16)");
             });
 
-            contact.Property(p => p.Emails).HasColumnName("Emails").HasColumnType("nvarchar(max)");
+            contact.OwnsMany(p => p.Emails, email =>
+            {
+                email.WithOwner().HasForeignKey("CustomerId");
+
+                email.Property(p => p.Address).HasColumnName("Address").HasColumnType("nvarchar(200)");
+
+                email.HasKey("CustomerId", "Address");
+            });
         });
 
         builder.Property(c => c.Notes).HasColumnName("Notes").HasColumnType("nvarchar(1000)");
