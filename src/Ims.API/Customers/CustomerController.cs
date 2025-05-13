@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ims.API.Customers;
 
+[ApiController]
 [Route("api/customers")]
 public class CustomerController : ControllerBase
 {

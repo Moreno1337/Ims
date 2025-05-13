@@ -1,4 +1,5 @@
 using Ims.Application.Customers;
+using Ims.Application.Customers.Commands;
 using Ims.Application.Interfaces;
 using Ims.Infra;
 using Ims.Infra.Customers;
@@ -12,9 +13,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
-
-builder.Services.AddControllers();
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblyContaining<CreateCustomerCommand>();
+});
 
 builder.Services.AddDbContext<AppDbContext>((sp, options) =>
 {
@@ -28,6 +30,8 @@ builder.Services.AddScoped<ICurrentUser, CurrentUserService>();
 builder.Services.AddScoped<ICurrentTenant, CurrentTenantService>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -37,5 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapControllers();
 
 app.Run();
