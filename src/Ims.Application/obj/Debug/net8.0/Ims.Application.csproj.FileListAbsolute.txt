@@ -14,3 +14,19 @@
 /home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.pdb
 /home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/ref/Ims.Application.dll
 /home/moreno/Documents/repos/Ims/src/Ims.Application/obj/Debug/net8.0/Ims.Application.sourcelink.json
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\refint\Ims.Application.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.pdb
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\bin\Debug\net8.0\Ims.Application.deps.json
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\bin\Debug\net8.0\Ims.Application.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\bin\Debug\net8.0\Ims.Application.pdb
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\bin\Debug\net8.0\Ims.Domain.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\bin\Debug\net8.0\Ims.Domain.pdb
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.csproj.AssemblyReference.cache
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.AssemblyInfoInputs.cache
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.AssemblyInfo.cs
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.csproj.CoreCompileInputs.cache
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Application.sourcelink.json
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\Ims.Appl.D656C0D8.Up2Date
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Application\obj\Debug\net8.0\ref\Ims.Application.dll

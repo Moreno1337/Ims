@@ -1,10 +1,11 @@
 using Ims.Domain.Customers.ValueObjects;
+using Ims.Domain.Interfaces;
 
 namespace Ims.Domain.Customers;
 
 public enum CustomerType { NaturalPerson, LegalEntity }
 
-public class Customer
+public class Customer : IAuditable
 {
     public int Id { get; private set; }
     public CustomerType Type { get; private set; }

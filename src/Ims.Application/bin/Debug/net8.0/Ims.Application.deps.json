@@ -45,7 +45,10 @@
       },
       "Ims.Domain/1.0.0": {
         "runtime": {
-          "Ims.Domain.dll": {}
+          "Ims.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -5518,25 +5518,34 @@
     ]
   },
   "packageFolders": {
-    "/home/moreno/.nuget/packages/": {}
+    "C:\\Users\\jmoreno\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/moreno/Documents/repos/Ims/tests/Ims.API.Tests/Ims.API.Tests.csproj",
+      "projectUniqueName": "C:\\Programas e Sistemas\\Extern\\Ims\\tests\\Ims.API.Tests\\Ims.API.Tests.csproj",
       "projectName": "Ims.API.Tests",
-      "projectPath": "/home/moreno/Documents/repos/Ims/tests/Ims.API.Tests/Ims.API.Tests.csproj",
-      "packagesPath": "/home/moreno/.nuget/packages/",
-      "outputPath": "/home/moreno/Documents/repos/Ims/tests/Ims.API.Tests/obj/",
+      "projectPath": "C:\\Programas e Sistemas\\Extern\\Ims\\tests\\Ims.API.Tests\\Ims.API.Tests.csproj",
+      "packagesPath": "C:\\Users\\jmoreno\\.nuget\\packages\\",
+      "outputPath": "C:\\Programas e Sistemas\\Extern\\Ims\\tests\\Ims.API.Tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/moreno/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\jmoreno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/BfhqI1uTkQzUaneChPkxpqXTXtNS6WZc4WgV4zQOLrrinodhga/api/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -5548,7 +5557,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -5591,7 +5606,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

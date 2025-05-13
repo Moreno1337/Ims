@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "CkYqss4PlBmaZwHtQgZA0a14IQN4hd4tRwO837w9pj8ietrL3UXwgc0VLRTwZJV0idw+NQ7G8euS69N8H03WWg==",
+  "dgSpecHash": "Rh0MXLTwVtA=",
   "success": true,
-  "projectFilePath": "/home/moreno/Documents/repos/Ims/src/Ims.Application/Ims.Application.csproj",
+  "projectFilePath": "C:\\Programas e Sistemas\\Extern\\Ims\\src\\Ims.Application\\Ims.Application.csproj",
   "expectedPackageFiles": [
-    "/home/moreno/.nuget/packages/mediatr/12.5.0/mediatr.12.5.0.nupkg.sha512",
-    "/home/moreno/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
-    "/home/moreno/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+    "C:\\Users\\jmoreno\\.nuget\\packages\\mediatr\\12.5.0\\mediatr.12.5.0.nupkg.sha512",
+    "C:\\Users\\jmoreno\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\jmoreno\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

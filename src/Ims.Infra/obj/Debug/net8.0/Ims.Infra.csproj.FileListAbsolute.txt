@@ -16,3 +16,21 @@
 /home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.pdb
 /home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/ref/Ims.Infra.dll
 /home/moreno/Documents/repos/Ims/src/Ims.Infra/obj/Debug/net8.0/Ims.Infra.sourcelink.json
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\refint\Ims.Infra.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.pdb
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\bin\Debug\net8.0\Ims.Infra.deps.json
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\bin\Debug\net8.0\Ims.Infra.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\bin\Debug\net8.0\Ims.Infra.pdb
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\bin\Debug\net8.0\Ims.Application.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\bin\Debug\net8.0\Ims.Domain.dll
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\bin\Debug\net8.0\Ims.Application.pdb
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\bin\Debug\net8.0\Ims.Domain.pdb
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.csproj.AssemblyReference.cache
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.AssemblyInfoInputs.cache
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.AssemblyInfo.cs
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.csproj.CoreCompileInputs.cache
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.sourcelink.json
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\Ims.Infra.csproj.Up2Date
+C:\Programas e Sistemas\Extern\Ims\src\Ims.Infra\obj\Debug\net8.0\ref\Ims.Infra.dll
