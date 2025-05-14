@@ -4,8 +4,9 @@ namespace Ims.Infra.Services;
 
 public class CurrentTenantService : ICurrentTenant
 {
-    public int GetTenantId()
-    {
-        return 1; // Yet to implement
-    }
+    private readonly AsyncLocal<int> _currentTenantId = new AsyncLocal<int>();
+
+    public int GetTenantId() => _currentTenantId.Value;
+
+    public void SetTenantId(int tenantId) => _currentTenantId.Value = tenantId;
 }

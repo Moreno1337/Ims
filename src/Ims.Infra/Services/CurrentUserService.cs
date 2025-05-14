@@ -4,8 +4,9 @@ namespace Ims.Infra.Services;
 
 public class CurrentUserService : ICurrentUser
 {
-    public int GetUserId()
-    {
-        return 1; // Yet to implement
-    }
+    private readonly AsyncLocal<int> _currentUserId = new AsyncLocal<int>();
+
+    public int GetUserId() => _currentUserId.Value;
+
+    public void SetUserId(int userId) => _currentUserId.Value = userId;
 }
