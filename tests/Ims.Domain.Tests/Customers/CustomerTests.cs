@@ -1,6 +1,8 @@
 using Ims.Domain.Customers;
 using Ims.Domain.Customers.Exceptions;
 using Ims.Domain.Customers.ValueObjects;
+using Ims.Domain.Shared.Exceptions;
+using Ims.Domain.Shared.ValueObjects;
 
 namespace Ims.Domain.Tests.Customers;
 
