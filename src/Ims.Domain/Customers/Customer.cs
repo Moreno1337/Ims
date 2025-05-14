@@ -5,7 +5,7 @@ namespace Ims.Domain.Customers;
 
 public enum CustomerType { NaturalPerson, LegalEntity }
 
-public class Customer : IAuditable
+public class Customer : IAuditable, IHasTenant
 {
     public int Id { get; private set; }
     public CustomerType Type { get; private set; }

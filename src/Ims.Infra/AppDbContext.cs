@@ -29,22 +29,27 @@ public class AppDbContext : DbContext
 
     public override int SaveChanges()
     {
-        ApplyAuditInfo();
+        ApplyAdditionalInfo();
         return base.SaveChanges();
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        ApplyAuditInfo();
+        ApplyAdditionalInfo();
         return base.SaveChangesAsync(cancellationToken);
     }
 
-    private bool ShouldHaveAuditFields(Type clrType)
+    private bool HasAuditFields(Type clrType)
     {
         return typeof(IAuditable).IsAssignableFrom(clrType);
     }
 
-    private void ApplyAuditInfo()
+    private bool HasTenantField(Type clrType)
+    {
+        return typeof(IHasTenant).IsAssignableFrom(clrType);
+    }
+
+    private void ApplyAdditionalInfo()
     {
         var now = DateTime.UtcNow;
         var user = _currentUser.GetUserId();
@@ -54,20 +59,28 @@ public class AppDbContext : DbContext
         {
             var entityType = entry.Entity.GetType();
 
-            if (!ShouldHaveAuditFields(entityType)) continue;
-
-            if (entry.State == EntityState.Added)
+            if (HasTenantField(entityType))
             {
-                entry.Property("TenantId").CurrentValue = tenantId;
-                entry.Property("CreatedBy").CurrentValue = user;
-                entry.Property("CreatedAt").CurrentValue = now;
-
-                entry.Property("Status").CurrentValue = true;
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("TenantId").CurrentValue = tenantId;
+                }
             }
-            else if (entry.State == EntityState.Modified)
+
+            if (HasAuditFields(entityType))
             {
-                entry.Property("UpdatedBy").CurrentValue = user;
-                entry.Property("UpdatedAt").CurrentValue = now;
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("CreatedBy").CurrentValue = user;
+                    entry.Property("CreatedAt").CurrentValue = now;
+
+                    entry.Property("Status").CurrentValue = true;
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("UpdatedBy").CurrentValue = user;
+                    entry.Property("UpdatedAt").CurrentValue = now;
+                }
             }
         }
     }

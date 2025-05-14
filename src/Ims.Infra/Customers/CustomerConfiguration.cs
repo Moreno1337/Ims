@@ -11,13 +11,8 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
         builder.HasKey(c => c.Id);
         builder.Property(c => c.Id).HasColumnName("Id").HasColumnType("int").ValueGeneratedOnAdd().IsRequired();
 
-        builder.Property<int>("TenantId").IsRequired();
-
-        builder.Property<int>("CreatedBy").HasColumnType("int").IsRequired();
-        builder.Property<DateTime>("CreatedAt").HasColumnType("datetime").IsRequired();
-        builder.Property<int?>("UpdatedBy").HasColumnType("int");
-        builder.Property<DateTime?>("UpdatedAt").HasColumnType("datetime");
-        builder.Property<bool>("Status").HasColumnType("bit").HasDefaultValue(true).IsRequired();
+        builder.AddTenantField();
+        builder.AddAuditFields();
 
         builder.OwnsOne(c => c.PersonInfo, person =>
         {
