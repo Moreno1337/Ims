@@ -1,3 +1,4 @@
+using Ims.Domain.Customers.Exceptions;
 using Ims.Domain.Customers.ValueObjects;
 using Ims.Domain.Interfaces;
 
@@ -81,21 +82,21 @@ public class Customer : IAuditable, IHasTenant
     )
     {
         if (type == CustomerType.NaturalPerson && personInfo == null)
-            throw new ArgumentException("PersonInfo is required for NaturalPerson");
+            throw new MissingRequiredFieldException(nameof(PersonInfo));
 
         if (type == CustomerType.NaturalPerson && companyInfo != null)
-            throw new ArgumentException("CompanyInfo must be null for NaturalPerson");
+            throw new InvalidCustomerTypeInfoException(nameof(CompanyInfo));
 
         if (type == CustomerType.LegalEntity && companyInfo == null)
-            throw new ArgumentException("CompanyInfo is required for LegalEntity");
+            throw new MissingRequiredFieldException(nameof(CompanyInfo));
 
         if (type == CustomerType.LegalEntity && personInfo != null)
-            throw new ArgumentException("PersonInfo must be null for LegalEntity");
+            throw new InvalidCustomerTypeInfoException(nameof(PersonInfo));
 
         if (address is null)
-            throw new ArgumentException("Address info is required");
+            throw new MissingRequiredFieldException(nameof(Address));
 
         if (contactInfo is null)
-            throw new ArgumentException("Contact info is required");
+            throw new MissingRequiredFieldException(nameof(ContactInfo));
     }
 }
