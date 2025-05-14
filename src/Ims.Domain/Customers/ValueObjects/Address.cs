@@ -36,9 +36,9 @@ public class Address
             neighborhood
         );
 
-        Country = country!.ToUpper();
+        Country = country!;
         PostalCode = postalCode!;
-        State = state!;
+        State = state!.ToUpper();
         City = city!;
         Street = street!;
         Number = number!;
@@ -82,14 +82,14 @@ public class Address
         if (string.IsNullOrEmpty(country))
             throw new ArgumentException("Country is required", nameof(country));
 
-        if (country.Length != 2)
-            throw new ArgumentException("Must specify country as it's acronym (e.g. PR, SP, etc)", nameof(country));
-
         if (string.IsNullOrEmpty(postalCodeValue))
             throw new ArgumentException("PostalCode is required", nameof(postalCodeValue));
 
         if (string.IsNullOrEmpty(state))
             throw new ArgumentException("State is required", nameof(state));
+
+        if (state.Length != 2)
+            throw new ArgumentException("Must specify state as it's acronym (e.g. PR, SP, etc)", nameof(state));
 
         if (string.IsNullOrEmpty(city))
             throw new ArgumentException("City is required", nameof(city));
