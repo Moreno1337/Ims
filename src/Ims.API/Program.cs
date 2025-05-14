@@ -1,3 +1,5 @@
+using Ims.API.DI;
+using Ims.API.Middlewares;
 using Ims.Application.Customers;
 using Ims.Application.Customers.Commands;
 using Ims.Application.Interfaces;
@@ -9,7 +11,10 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c => 
+{
+    c.OperationFilter<AddRequiredHeadersFilter>();
+});
 
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -47,5 +52,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
+app.UseMiddleware<TenantAndUserMiddleware>();
 
 app.Run();
