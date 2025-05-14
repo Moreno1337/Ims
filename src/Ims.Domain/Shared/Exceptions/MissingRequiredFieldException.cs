@@ -1,4 +1,4 @@
-namespace Ims.Domain.Customers.Exceptions;
+namespace Ims.Domain.Shared.Exceptions;
 
 public class MissingRequiredFieldException : Exception
 {

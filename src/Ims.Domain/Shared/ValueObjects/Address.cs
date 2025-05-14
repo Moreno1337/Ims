@@ -1,4 +1,4 @@
-namespace Ims.Domain.Customers.ValueObjects;
+namespace Ims.Domain.Shared.ValueObjects;
 
 public class Address
 {

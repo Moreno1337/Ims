@@ -2,6 +2,7 @@ using Ims.Application.Customers;
 using Ims.Application.Customers.Commands;
 using Ims.Domain.Customers;
 using Ims.Domain.Customers.ValueObjects;
+using Ims.Domain.Shared.ValueObjects;
 using MediatR;
 
 namespace IMS.Application.Customers.Commands;

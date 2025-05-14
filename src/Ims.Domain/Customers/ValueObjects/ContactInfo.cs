@@ -1,3 +1,5 @@
+using Ims.Domain.Shared.ValueObjects;
+
 namespace Ims.Domain.Customers.ValueObjects;
 
 public class ContactInfo

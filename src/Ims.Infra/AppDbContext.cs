@@ -1,6 +1,6 @@
 ﻿using Ims.Application.Interfaces;
 using Ims.Domain.Customers;
-using Ims.Domain.Interfaces;
+using Ims.Domain.Shared.Interfaces;
 using Ims.Infra.Customers;
 using Microsoft.EntityFrameworkCore;
 

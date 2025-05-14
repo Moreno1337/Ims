@@ -1,7 +1,6 @@
-﻿using System.Diagnostics.Metrics;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
-namespace Ims.Domain.Customers.ValueObjects;
+namespace Ims.Domain.Shared.ValueObjects;
 
 public class CNPJ
 {
