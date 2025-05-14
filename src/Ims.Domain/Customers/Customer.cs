@@ -83,8 +83,14 @@ public class Customer : IAuditable, IHasTenant
         if (type == CustomerType.NaturalPerson && personInfo == null)
             throw new ArgumentException("PersonInfo is required for NaturalPerson");
 
+        if (type == CustomerType.NaturalPerson && companyInfo != null)
+            throw new ArgumentException("CompanyInfo must be null for NaturalPerson");
+
         if (type == CustomerType.LegalEntity && companyInfo == null)
             throw new ArgumentException("CompanyInfo is required for LegalEntity");
+
+        if (type == CustomerType.LegalEntity && personInfo != null)
+            throw new ArgumentException("PersonInfo must be null for LegalEntity");
 
         if (address is null)
             throw new ArgumentException("Address info is required");
