@@ -31,6 +31,7 @@ public class Customer : IAuditable, IHasTenant
     {
         ValidateFields(type, personInfo, companyInfo, address, contactInfo);
 
+        Type = type;
         PersonInfo = personInfo;
         CompanyInfo = companyInfo;
         Address = address!;
@@ -68,6 +69,7 @@ public class Customer : IAuditable, IHasTenant
     {
         ValidateFields(type, personInfo, companyInfo, address, contactInfo);
 
+        Type = type;
         PersonInfo = personInfo;
         CompanyInfo = companyInfo;
         Address = address!;

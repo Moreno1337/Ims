@@ -1,3 +1,4 @@
+using Ims.Domain.Shared.Exceptions;
 using Ims.Domain.Shared.ValueObjects;
 
 namespace Ims.Domain.Customers.ValueObjects;
@@ -19,10 +20,10 @@ public class PersonInfo
         CPF cpf = CPF.Create(cpfValue);
 
         if (string.IsNullOrEmpty(name))
-            throw new ArgumentException("Name is required", nameof(name));
+            throw new MissingRequiredFieldException(nameof(Name));
 
         if (birthDate is null)
-            throw new ArgumentException("Birth Date is required", nameof(birthDate));
+            throw new MissingRequiredFieldException(nameof(BirthDate));
 
         CPF = cpf;
         Name = name;

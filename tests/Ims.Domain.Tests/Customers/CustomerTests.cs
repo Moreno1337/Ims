@@ -48,6 +48,30 @@ public class CustomerTests
     }
 
     [Fact]
+    public void Should_Create_LegalEntity_Customer_Successfully()
+    {
+        var companyInfo = CreateValidCompanyInfo();
+        var address = CreateValidAddress();
+        var contact = CreateValidContactInfo();
+
+        var customer = Customer.Create(
+            CustomerType.LegalEntity,
+            null,
+            companyInfo,
+            address,
+            contact,
+            "Test note"
+        );
+
+        Assert.NotNull(customer);
+        Assert.Equal(CustomerType.LegalEntity, customer.Type);
+        Assert.NotNull(customer.CompanyInfo);
+        Assert.Null(customer.PersonInfo);
+        Assert.NotNull(customer.Address);
+        Assert.NotNull(customer.ContactInfo);
+    }
+
+    [Fact]
     public void Should_Throw_When_Creating_LegalEntity_Without_CompanyInfo()
     {
         var address = CreateValidAddress();

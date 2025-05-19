@@ -1,3 +1,4 @@
+using Ims.Domain.Shared.Exceptions;
 using Ims.Domain.Shared.ValueObjects;
 
 namespace Ims.Domain.Customers.ValueObjects;
@@ -27,7 +28,7 @@ public class CompanyInfo
         CNPJ cnpj = CNPJ.Create(cnpjValue);
 
         if (string.IsNullOrEmpty(corporateName))
-            throw new ArgumentException("Corporate name is required", nameof(corporateName));
+            throw new MissingRequiredFieldException(nameof(CorporateName));
 
         CNPJ = cnpj;
         CorporateName = corporateName;
