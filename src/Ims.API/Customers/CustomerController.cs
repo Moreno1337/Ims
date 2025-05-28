@@ -2,10 +2,12 @@ using AutoMapper;
 using Ims.API.Customers.Models.Requests;
 using Ims.Application.Customers.Commands;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ims.API.Customers;
 
+[Authorize]
 [ApiController]
 [Route("api/customers")]
 public class CustomerController : ControllerBase
