@@ -9,5 +9,6 @@ public class CustomerMappingProfile : Profile
     public CustomerMappingProfile()
     {
         CreateMap<CreateCustomerRequest, CreateCustomerCommand>();
+        CreateMap<UpdateCustomerRequest, UpdateCustomerCommand>();
     }
 }

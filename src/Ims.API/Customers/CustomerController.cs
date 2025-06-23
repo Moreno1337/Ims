@@ -29,10 +29,12 @@ public class CustomerController : ControllerBase
         return CreatedAtAction(nameof(GetCustomer), new { id = customerId }, null);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateCustomer(int id, [FromBody] UpdateCustomerRequest request)
+    [HttpPut]
+    public async Task<IActionResult> UpdateCustomer([FromBody] UpdateCustomerRequest request)
     {
-        throw new NotImplementedException();
+        var command = _mapper.Map<UpdateCustomerCommand>(request);
+        await _mediator.Send(command);
+        return NoContent();
     }
 
     [HttpGet("{id}")]

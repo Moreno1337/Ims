@@ -40,6 +40,32 @@ public class Customer : IAuditable, IHasTenant
     }
 
     public static Customer Create(
+        int id,
+        CustomerType type,
+        PersonInfo? personInfo,
+        CompanyInfo? companyInfo,
+        Address? address,
+        ContactInfo? contactInfo,
+        string? notes
+    )
+    {
+        var customer = new Customer(
+            type,
+            personInfo,
+            companyInfo,
+            address,
+            contactInfo,
+            notes
+        );
+
+        if (id <= 0)
+            throw new ArgumentException($"Invalid customer Id. {nameof(Id)}");
+
+        customer.Id = id;
+        return customer;
+    }
+
+    public static Customer Create(
         CustomerType type,
         PersonInfo? personInfo,
         CompanyInfo? companyInfo,
