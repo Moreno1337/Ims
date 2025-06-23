@@ -1,6 +1,7 @@
 using AutoMapper;
 using Ims.API.Customers.Models.Requests;
 using Ims.Application.Customers.Commands;
+using Ims.Application.Customers.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -40,12 +41,14 @@ public class CustomerController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCustomer(int id)
     {
-        throw new NotImplementedException();
+        var result = await _mediator.Send(new GetCustomerQuery() { Id = id });
+        return Ok(result);
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAllCustomers(int id)
+    public async Task<IActionResult> GetAllCustomers()
     {
-        throw new NotImplementedException();
+        var result = await _mediator.Send(new GetAllCustomersQuery());
+        return Ok(result);
     }
 }

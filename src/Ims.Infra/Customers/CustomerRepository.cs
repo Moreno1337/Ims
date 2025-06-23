@@ -1,5 +1,6 @@
 ﻿using Ims.Application.Customers;
 using Ims.Domain.Customers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ims.Infra.Customers;
 
@@ -22,5 +23,15 @@ public class CustomerRepository : ICustomerRepository
     {
         _context.Customers.Update(customer);
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<Customer?> GetAsync(int id)
+    {
+        return await _context.Customers.FindAsync(id);
+    }
+
+    public async Task<List<Customer>> GetAllAsync()
+    {
+        return await _context.Customers.ToListAsync();
     }
 }
