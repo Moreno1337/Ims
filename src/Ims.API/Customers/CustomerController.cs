@@ -1,5 +1,4 @@
 using AutoMapper;
-using Ims.API.Customers.Models.Requests;
 using Ims.Application.Customers.Commands;
 using Ims.Application.Customers.Queries;
 using MediatR;
@@ -23,18 +22,16 @@ public class CustomerController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerRequest request)
+    public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerCommand request)
     {
-        var command = _mapper.Map<CreateCustomerCommand>(request);
-        var customerId = await _mediator.Send(command);
+        var customerId = await _mediator.Send(request);
         return CreatedAtAction(nameof(GetCustomer), new { id = customerId }, null);
     }
 
     [HttpPut]
-    public async Task<IActionResult> UpdateCustomer([FromBody] UpdateCustomerRequest request)
+    public async Task<IActionResult> UpdateCustomer([FromBody] UpdateCustomerCommand request)
     {
-        var command = _mapper.Map<UpdateCustomerCommand>(request);
-        await _mediator.Send(command);
+        await _mediator.Send(request);
         return NoContent();
     }
 
