@@ -1,4 +1,5 @@
 using AutoMapper;
+using Ims.API.Attributes;
 using Ims.Application.Customers.Commands;
 using Ims.Application.Customers.Queries;
 using MediatR;
@@ -9,6 +10,7 @@ namespace Ims.API.Customers;
 
 [Authorize]
 [ApiController]
+[RequireTenant]
 [Route("api/customers")]
 public class CustomerController : ControllerBase
 {

@@ -1,12 +1,21 @@
 using Ims.Application.Interfaces;
+using Microsoft.AspNetCore.Http;
 
 namespace Ims.Infra.Services;
 
 public class CurrentTenantService : ICurrentTenant
 {
-    private readonly AsyncLocal<int> _currentTenantId = new AsyncLocal<int>();
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public int GetTenantId() => _currentTenantId.Value;
+    public CurrentTenantService(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
+    }
 
-    public void SetTenantId(int tenantId) => _currentTenantId.Value = tenantId;
+    public int GetTenantId()
+    {
+        var tenantClaim = _httpContextAccessor.HttpContext?.User?.FindFirst("tenantId");
+        var tenantId = tenantClaim?.Value ?? throw new UnauthorizedAccessException("Tenant ID not found in token.");
+        return int.Parse(tenantId);
+    }
 }

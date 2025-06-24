@@ -1,5 +1,3 @@
-using Ims.API.DI;
-using Ims.API.Middlewares;
 using Ims.Application.Customers;
 using Ims.Application.Customers.Commands;
 using Ims.Application.Interfaces;
@@ -17,7 +15,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.OperationFilter<AddRequiredHeadersFilter>();
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -81,6 +78,7 @@ builder.Services.AddScoped<ICurrentTenant, CurrentTenantService>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -97,7 +95,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapControllers();
-app.UseMiddleware<TenantAndUserMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();
