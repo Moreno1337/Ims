@@ -15,12 +15,10 @@ namespace Ims.API.Customers;
 public class CustomerController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly IMapper _mapper;
 
-    public CustomerController(IMediator mediator, IMapper mapper)
+    public CustomerController(IMediator mediator)
     {
         _mediator = mediator;
-        _mapper = mapper;
     }
 
     [HttpPost]
